@@ -33,3 +33,11 @@ Do not open `index.html` directly because browsers commonly block local `fetch()
 ## If you see “Unexpected token <”
 
 The server returned an HTML page for a requested JSON file. This usually means a file in `data/` was not uploaded, the filename changed, or the host redirects unknown paths to `index.html`. This build reports the exact failing data path. Keep the full folder structure intact and run from the site root.
+
+## GeoJSON export
+
+**Export filtered GeoJSON** downloads the currently filtered area polygons and flow lines. The export includes readable area, commodity, mode, trade-type, direction, measure, units, and selection metadata.
+
+## Scrollable table and CSV export
+
+The bottom panel lists aggregated connected FAF areas for the current filters, sorted from highest to lowest flow. **Export table CSV** downloads the visible filtered results. Map hover uses one reusable dark popup so multiple popups cannot accumulate.
