@@ -7,7 +7,7 @@ A static Mapbox GL JS interface joining FAF6.0 origin-destination flows to FAF6 
 1. Open a terminal in this folder.
 2. Run `python -m http.server 8000`.
 3. Open `http://localhost:8000`.
-4. Click **Mapbox token** and enter a public token.
+4. Paste a public Mapbox token in the header and click **Save token**.
 
 Do not open `index.html` directly because browsers commonly block local `fetch()` requests.
 
@@ -23,3 +23,13 @@ Do not open `index.html` directly because browsers commonly block local `fetch()
 - `data/faf6_zones.geojson`: FAF6 polygons keyed by `FAF6`.
 - `data/flows.json`: compact rows keyed by `dms_orig` and `dms_dest`.
 - `data/metadata.json`: legible zone, commodity, mode, trade, and field labels.
+
+## Folder structure
+
+- `js/app.js`: application logic
+- `styles/styles.css`: application styles
+- `data/`: local JSON and GeoJSON data
+
+## If you see “Unexpected token <”
+
+The server returned an HTML page for a requested JSON file. This usually means a file in `data/` was not uploaded, the filename changed, or the host redirects unknown paths to `index.html`. This build reports the exact failing data path. Keep the full folder structure intact and run from the site root.
